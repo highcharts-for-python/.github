@@ -42,7 +42,7 @@ features native integration with:
   * **PySpark**. Automatically produce data visualizations from data in a PySpark
     dataframe.
 
-**COMPLETE DOCUMENTATION:** http://highcharts-core.readthedocs.org/en/latest/index.html
+**COMPLETE DOCUMENTATION:** http://core-docs.highchartspython.com/en/latest/index.html
 
 --------------------
 
@@ -109,7 +109,7 @@ Key Highcharts for Python Features
 * **Comprehensive Highcharts Support**. Every single Highcharts chart type and every
   single configuration option is supported in the **Highcharts for Python** toolkit.
   This includes the over 70 data visualization types supported by
-  `Highcharts JS <https://www.highcharts.com/product/highcharts/>`__ and the 50+
+  `Highcharts Core <https://www.highcharts.com/product/highcharts/>`__ and the 50+
   technical indicator visualizations available in
   `Highcharts Stock <https://www.highcharts.com/product/stock/>`__, with full support for
   the rich JavaScript formatter (JS callback functions)
@@ -118,7 +118,7 @@ Key Highcharts for Python Features
 
   **See Also**
 
-    * `Supported Visualizations <https://highcharts-core.readthedocs.io/en/latest/visualizations.html>`__
+    * `Supported Visualizations <https://core-docs.highchartspython.com/en/latest/visualizations.html>`__
 
 * **Simple JavaScript Code Generation**. With one method call, produce production-ready
   JavaScript code to render your interactive visualizations using Highcharts' rich
@@ -141,197 +141,5 @@ Key Highcharts for Python Features
 ==============================================
 
 For a discussion of **Highcharts for Python** in comparison to alternatives, please see
-the **COMPLETE DOCUMENTATION:** http://highcharts-core.readthedocs.org/en/latest/index.html
+the **COMPLETE DOCUMENTATION:** http://core-docs.highchartspython.com/en/latest/index.html
 
----------------------
-
-********************************
-Hello World, and Basic Usage
-********************************
-
-1. Import Highcharts Stock for Python
-==========================================
-
-.. include:: using/_importing.rst
-
-2. Create Your Chart
-================================
-
-  .. code-block:: python
-
-    # from a JavaScript file
-    my_chart = highcharts.Chart.from_js_literal('my_js_literal.js')
-
-    # from a JSON file
-    my_chart = highcharts.Chart.from_json('my_json.json')
-
-    # from a Python dict
-    my_chart = highcharts.Chart.from_dict(my_dict_obj)
-
-    # from a Pandas dataframe
-    my_chart = highcharts.Chart.from_pandas(df,
-                                            property_map = {
-                                                'x': 'transactionDate',
-                                                'y': 'invoiceAmt',
-                                                'id': 'id'
-                                            },
-                                            series_type = 'line')
-
-    # from a PySpark dataframe
-    my_chart = highcharts.Chart.from_pyspark(df,
-                                             property_map = {
-                                                 'x': 'transactionDate',
-                                                 'y': 'invoiceAmt',
-                                                 'id': 'id'
-                                             },
-                                             series_type = 'line')
-
-    # from a CSV
-    my_chart = highcharts.Chart.from_csv('/some_file_location/filename.csv'
-                                         column_property_map = {
-                                            'x': 0,
-                                            'y': 4,
-                                            'id': 14
-                                         },
-                                         series_type = 'line')
-
-    # from a HighchartsOptions configuration object
-    my_chart = highcharts.Chart.from_options(my_options)
-
-    # from a Series configuration
-    my_chart = highcharts.Chart.from_series(my_series)
-
-
-3. Configure Global Settings (optional)
-=============================================
-
-  .. code-block:: python
-
-    # Import SharedOptions
-    from highcharts_core.global_options.shared_options import SharedOptions
-
-    # from a JavaScript file
-    my_global_settings = SharedOptions.from_js_literal('my_js_literal.js')
-
-    # from a JSON file
-    my_global_settings = SharedOptions.from_json('my_json.json')
-
-    # from a Python dict
-    my_global_settings = SharedOptions.from_dict(my_dict_obj)
-
-    # from a HighchartsOptions configuration object
-    my_global_settings = SharedOptions.from_options(my_options)
-
-
-4. Configure Your Chart / Global Settings
-================================================
-
-  .. code-block:: python
-
-    from highcharts_core.options.title import Title
-    from highcharts_core.options.credits import Credits
-
-    # Using dicts
-    my_chart.title = {
-        'align': 'center'
-        'floating': True,
-        'text': 'The Title for My Chart',
-        'use_html': False,
-    }
-
-    my_chart.credits = {
-        'enabled': True,
-        'href': 'https://www.highcharts.com/',
-        'position': {
-            'align': 'center',
-            'vertical_align': 'bottom',
-            'x': 123,
-            'y': 456
-        },
-        'style': {
-            'color': '#cccccc',
-            'cursor': 'pointer',
-            'font_size': '9px'
-        },
-        'text': 'Chris Modzelewski'
-    }
-
-    # Using direct objects
-    from highcharts_core.options.title import Title
-    from highcharts_core.options.credits import Credits
-
-    my_title = Title(text = 'The Title for My Chart', floating = True, align = 'center')
-    my_chart.options.title = my_title
-
-    my_credits = Credits(text = 'Chris Modzelewski', enabled = True, href = 'https://www.highcharts.com')
-    my_chart.options.credits = my_credits
-
-
-5. Generate the JavaScript Code for Your Chart
-=================================================
-
-Now having configured your chart in full, you can easily generate the JavaScript code
-that will render the chart wherever it is you want it to go:
-
-  .. code-block:: python
-
-    # as a string
-    js_as_str = my_chart.to_js_literal()
-
-    # to a file (and as a string)
-    js_as_str = my_chart.to_js_literal(filename = 'my_target_file.js')
-
-
-6. Generate the JavaScript Code for Your Global Settings (optional)
-=========================================================================
-
-  .. code-block:: python
-
-    # as a string
-    global_settings_js = my_global_settings.to_js_literal()
-
-    # to a file (and as a string)
-    global_settings_js = my_global_settings.to_js_literal('my_target_file.js')
-
-
-7. Generate a Static Version of Your Chart
-==============================================
-
-  .. code-block:: python
-
-    # as in-memory bytes
-    my_image_bytes = my_chart.download_chart(format = 'png')
-
-    # to an image file (and as in-memory bytes)
-    my_image_bytes = my_chart.download_chart(filename = 'my_target_file.png',
-                                             format = 'png')
-
---------------
-
-*********************
-Questions and Issues
-*********************
-
-You can ask questions and report issues on the project's
-`Github Issues Page <https://github.com/highcharts-for-python/highcharts-core/issues>`_
-
------------------
-
-*********************
-Contributing
-*********************
-
-We welcome contributions and pull requests! For more information, please see the
-`Contributor Guide <https://highcharts-core.readthedocs.io/en/latest/contributing.html>`. And thanks to all those who've already contributed!
-
--------------------
-
-*********************
-Testing
-*********************
-
-We use `TravisCI <http://travisci.org>`_ for our build automation and
-`ReadTheDocs <https://readthedocs.org>`_ for our documentation.
-
-Detailed information about our test suite and how to run tests locally can be
-found in our Testing Reference.
