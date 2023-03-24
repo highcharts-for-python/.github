@@ -50,12 +50,41 @@ The toolkit features native integrations with:
 Installation
 ***************
 
+Highcharts Core for Python
+=============================
+
 To install **Highcharts Core for Python**, just execute:
 
-.. code:: bash
+  .. code:: bash
 
- $ pip install highcharts-core
+   $ pip install highcharts-core
 
+Highcharts Stock for Python
+=================================
+
+To install **Highcharts Stock for Python**, just execute:
+
+  .. code:: bash
+
+    $ pip install highcharts-stock
+
+Highcharts Maps for Python
+=================================
+
+To install **Highcharts Maps for Python**, just execute:
+
+  .. code:: bash
+
+    $ pip install highcharts-maps
+
+Highcharts Gantt for Python
+=================================
+
+To install **Highcharts Gantt for Python**, just execute:
+
+  .. code:: bash
+
+    $ pip install highcharts-gantt
 
 -------------
 
