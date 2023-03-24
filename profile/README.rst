@@ -4,9 +4,9 @@ Highcharts for Python Toolkit
 
 **High-end data visualization for the Python ecosystem**
 
-The **Highcharts for Python Toolkit** is a Python library that provides a Python wrapper
-for the fantastic `Highcharts <https://www.highcharts.com>`__ suite of JavaScript data
-visualization libraries, with full integration into the robust Python ecosystem.
+The **Highcharts for Python Toolkit** is a set of Python libraries that provide a Python wrapper
+for the `Highcharts <https://www.highcharts.com>`__ suite of JavaScript data
+visualization libraries, with full integration across the Python ecosystem.
 
 The full toolkit includes support for:
 
@@ -22,10 +22,10 @@ The full toolkit includes support for:
     - the core Highcharts data visualization library
   * - `Highcharts Stock for Python <https://github.com/highcharts-for-python/highcharts-stock>`__
     - `Highcharts Stock <https://www.highcharts.com/products/stock/>`__
-    - the robust time series visualization extension to Highcharts
+    - the time series visualization extension to Highcharts
   * - `Highcharts Maps for Python <https://github.com/highcharts-for-python/highcharts-maps>`__
     - `Highcharts Maps <https://www.highcharts.com/products/maps/>`__
-    - the rich map visualization extension to Highcharts
+    - the map visualization extension to Highcharts
   * - `Highcharts Gantt for Python <https://github.com/highcharts-for-python/highcharts-gantt>`__
     - `Highcharts Gantt <https://www.highcharts.com/products/gantt/>`__
     - the Gantt charting extension to Highcharts
@@ -33,8 +33,7 @@ The full toolkit includes support for:
     - the **Highcharts Export Server**
     - enabling the programmatic creation of static (downloadable) data visualizations
 
-In order to integrate **Highcharts for Python** into the Python ecosystem, the library
-features native integration with:
+The toolkit features native integrations with:
 
   * **Jupyter Labs/Notebook**. You can now produce high-end and interactive plots and
     renders using the full suite of Highcharts visualization capabilities.
@@ -64,23 +63,22 @@ To install **Highcharts Core for Python**, just execute:
 Why Highcharts for Python?
 ************************************
 
-Odds are you are aware of `Highcharts <https://www.highcharts.com>`__. If not, why not?
-It is the world's most popular, most powerful, category-defining JavaScript data
-visualization library. If you are building a web or mobile app/dashboard that will be
-visualizing data in some fashion, you should absolutely take a look at the Highcharts
-suite of solutions. Just take a look at some of their fantastic
-`demo visualizations <https://www.highcharts.com/demo>`_.
+`Highcharts <https://www.highcharts.com>`__ is the world's most popular, most powerful, 
+category-defining JavaScript data visualization library. If you are building a web or 
+mobile app/dashboard that will be visualizing data in some fashion, you should 
+absolutely take a look at the Highcharts suite of solutions. Just take a look at some 
+of their fantastic `demo visualizations <https://www.highcharts.com/demo>`_.
 
-`Highcharts <https://www.highcharts.com>`__ is a suite of JavaScript libraries. It is written in
-JavaScript, and is specifically used to configure and render data visualizations in a
-web browser (or other JavaScript-executing) environment. As a JavaScript
+As a suite of JavaScript libraries, `Highcharts <https://www.highcharts.com>`__ is 
+written in JavaScript, and is used to configure and render data visualizations in a
+web browser (or other JavaScript-executing) environment. As a set of JavaScript
 libraries, its audience is JavaScript developers. But what about the broader ecosystem of
 Python developers and data scientists?
 
-Python is increasingly used as the technology of choice for data science and for
-the backends of leading enterprise-grade applications. In other words, Python is
-often the backend that delivers data and content to the front-end...which then renders it
-using JavaScript and HTML.
+Given Python's increasing adoption as the technology of choice for data science and for
+the backends of leading enterprise-grade applications, Python is often the backend that 
+delivers data and content to the front-end...which then renders it using JavaScript and 
+HTML.
 
 There are numerous Python frameworks (Django, Flask, Tornado, etc.) with specific
 capabilities to simplify integration with Javascript frontend frameworks (React, Angular,
@@ -99,8 +97,8 @@ So we wrote the **Highcharts for Python** toolkit to bridge that gap.
 
 **Highcharts for Python** provides Python object representation for *all* of the
 JavaScript objects defined in the
-`Highcharts (JavaScript) API <https://api.highcharts.com/highcharts/>`__. It provides automatic data
-validation, and exposes simple and standardized methods for serializing those Python
+`Highcharts (JavaScript) API <https://api.highcharts.com/highcharts/>`__. It provides automatic 
+data validation, and exposes simple and standardized methods for serializing those Python
 objects back-and-forth to JavaScript object literal notation.
 
 Key Highcharts for Python Features
@@ -114,7 +112,7 @@ Key Highcharts for Python Features
   `Highcharts Core <https://www.highcharts.com/product/highcharts/>`__ and the 50+
   technical indicator visualizations available in
   `Highcharts Stock <https://www.highcharts.com/product/stock/>`__, with full support for
-  the rich JavaScript formatter (JS callback functions) capabilities that are often needed 
+  the rich JavaScript formatter (JS callback function) capabilities that are often needed 
   to get the most out of Highcharts' visualization and interaction capabilities.
 
   **See Also**
