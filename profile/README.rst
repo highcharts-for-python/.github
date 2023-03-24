@@ -1,5 +1,5 @@
 ###################################################
-Highcharts for Python Toolkit
+The Highcharts for Python Toolkit
 ###################################################
 
 **High-end data visualization for the Python ecosystem**
@@ -66,8 +66,8 @@ Why Highcharts for Python?
 `Highcharts <https://www.highcharts.com>`__ is the world's most popular, most powerful, 
 category-defining JavaScript data visualization library. If you are building a web or 
 mobile app/dashboard that will be visualizing data in some fashion, you should 
-absolutely take a look at the Highcharts suite of solutions. Just take a look at some 
-of their fantastic `demo visualizations <https://www.highcharts.com/demo>`_.
+absolutely take a look at the Highcharts suite of solutions. Take a peak at some 
+fantastic `demo visualizations <https://www.highcharts.com/demo>`__.
 
 As a suite of JavaScript libraries, `Highcharts <https://www.highcharts.com>`__ is 
 written in JavaScript, and is used to configure and render data visualizations in a
